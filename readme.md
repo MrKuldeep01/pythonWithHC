@@ -131,7 +131,6 @@
   - Type Chacking
     - type()
   - Strings in depth
-
     - single quates, double quates, triple quates
       - 'name'
       - "name"
@@ -301,6 +300,7 @@
     - inline conditionals 
     - exit method to stop the exicution of the program
 
+- **Day 4:**
   - Solve 10 conditional questions
 
     - Learning :
@@ -394,6 +394,8 @@
                 break;
         print("Done")    
       ```
+- **Two day's off** 🛴☕
+- **Day 5:**      
     - factorial calculator using while loop
       ```python
         print('-: Factorial calculator :-')
@@ -433,4 +435,75 @@
         score = (11 - count) * 10
         print("Awosome! you scored : '",score,"' \n Because you answered in ",count," time/times \nThank you.")    
       ```
-    - 
+    - find prime number
+    ```python
+      print(" -: Prime number chacker :-")
+      in_num = int(input("enter the number: "))
+      is_prime = True
+      if in_num > 1:
+          for num in range(2, in_num):
+              # print("iteration no. : ",num)
+              if (in_num % num) == 0 : 
+                  print("Noooooope. \nbecause of ",num)  
+                  is_prime = False
+                  break    
+      print("Number's Prime status : ", is_prime,"\n Thank you.")
+    ```
+    - Learning : 
+      - // operation: ' 5 / 2 = 2.5 ' but [' 5 // 2 = 2 ']
+    - check the duplicate item in given list print duplicate item and break the loop 
+      ```python
+        print("-: Duplicate value detector :- ")
+        names = ["kuldeep", "deep", "sonu", "deepika" ,"om"]
+        duplicate = False
+        for item in names: 
+            if names.count(item) > 1:
+                print('First duplicate item is: ',item)
+                duplicate = True
+                break
+        print('Duplicate status in list : ', duplicate,"\nThank you.")       
+      ```
+    - list handler
+      - adding
+      - removing
+      - handling inputs
+      ```python 
+        mylist = []
+        i = 0
+        print("-: List handler :- \nTo stop : 'x' \tTo step-back : '<'")
+        while True:
+            in_item = input("enter item : ")
+            if in_item == 'x':
+                break    
+            elif len(in_item) < 1:
+                print('iteration : ',i,"\t List is : ",mylist)
+                continue
+              
+            elif in_item == '<':
+                mylist.pop()
+                print('iteration : ',i,"\t List is : ",mylist)
+                continue
+              
+            mylist.append(in_item)
+            print('iteration : ',i,"\t List is : ",mylist)
+            i += 1
+        print("mylist is : ", mylist)    
+      ```
+    - exponential backoff
+      - implement strategy that double wait time b/w retries, starting from 1sec and stop after 5 retries
+      - we need to use time module
+      ```python
+        import time
+        print('waiting simulation')
+        wait_time = 1 # in sec
+        max_tries = 5
+        current_try = 0
+        while current_try < max_tries:
+            print("request No. : ",current_try+1,"\t waiting time : ",wait_time,"sec")
+            time.sleep(wait_time)
+            print('🎇 Happy diwali🎊\t'*(current_try + 1))
+            wait_time *= 2
+            current_try += 1
+
+        print('Thank you.')
+      ```
