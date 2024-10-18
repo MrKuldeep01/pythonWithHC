@@ -507,3 +507,52 @@
 
         print('Thank you.')
       ```
+    - Scopes
+      - local scope
+      - globle scope
+        globle key word used to manupulate globle variables in sub funcions
+        ```python
+          x = 1
+          def func()
+            globle x
+            x = 5
+            print(x) # x = 5 :: overwriting globle x
+          print(x) # x = 5 
+        ```
+      - closurs
+        - bag pack : all required things within 
+      - return statement
+  
+- **Day 5:**
+  - Basic function syntax:
+    - write a function to calculate sqaure of a given number and return
+      ```python 
+        print("-: Square calculator :-")
+        num = int(input("enter number : "))
+        def square_of(num):
+            return num ** 2
+
+        print("square of ",num,": ",square_of(num))
+      ```
+  - Sum calculator
+    - function that take two params and return their sum 
+      ```python
+        print("-: Sum finder :-")
+        a = int(input("variable 1: "))
+        b = int(input("variable 2: "))
+        
+        def sum_of(a,b):
+            return a + b
+        print("Sum of ",a,"and ",b,": ",sum_of(a,b))
+      ```
+  - Polymorphism in function
+    - write a function multiply that multiply two number and work on string also
+      ```python
+        print("-: Multiply hero :-")
+        a = input("variable 1: ")
+        b = int(input("variable 2 (must to be number): "))
+        def multiply (a,b):
+            return a * b  
+        print("multiplication of given number ",a,"and ",b," : ", multiply(a,b))
+      ```
+  
