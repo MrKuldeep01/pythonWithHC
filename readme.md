@@ -555,4 +555,41 @@
             return a * b  
         print("multiplication of given number ",a,"and ",b," : ", multiply(a,b))
       ```
-  
+  - Default parameter 
+    - create a function that greet user, if data is not provided then show default values
+      ```python
+        print("-: Welcome Function :-")
+        name = input("name : ")
+        def greet(name = "user"):
+            return "Hello,  "+name+"!\nGreat to see you."
+        print(greet(name))
+      ```
+  - Lambda function :: short hand function notation
+    - create a lambda function to calculate cube of given number
+      ```python
+        print("-: Cube calculator using lambda function :-")
+        num = int(input("number: "))
+        cube = lambda num : num ** 3
+        print('cube of ',num," : ",cube(num))
+      ```
+  - Function with *args
+    - write a fuction that take variable no. of arguments and return their sum
+      ```python
+        def sum_of(*rest):
+            return sum(rest)
+        # def sum_of(*rest):
+        #   return sum(rest) 
+        print("1,2,3,4 : ",sum_of(1,2,3,4))
+        print("1,2,3,4,5,6 : ",sum_of(1,2,3,4,5,6))
+        print("1,2 : ",sum_of(1,2,))
+      ```
+  - Function with **kwarg
+    - create a function that take number of keyword arguments and print them in format key: value
+      ```python
+        print("-: **kwargs function")
+        def fun(**kwargs):
+            for key, value in kwargs.items():
+                print(f"{key} : {value}")
+        fun(name="kuldeep",age=22, brave="devine")
+        fun(name="kuku",age=26)
+      ```
