@@ -593,3 +593,50 @@
         fun(name="kuldeep",age=22, brave="devine")
         fun(name="kuku",age=26)
       ```
+- **Day next**      
+  - Basic Class and Objects
+    - Create a car class with attribute like brand, model. Then create an instance of this class.
+      ```python
+        class Car:
+        # constracter : __init__() method 
+          def __init__(self,brand,model):    
+              self.brand = brand
+              self.model = model
+        acar = Car("xx", "yky")
+        audi_car = Car("audi", "4circule")
+        print(acar.brand,audi_car.brand) 
+      ```
+  - Class method & self
+    - add a method to car class that display the fullname of the car (brand, model)
+      ```python
+        class Car:
+              def __init__(self, brand, model):
+                self.brand = brand
+                self.model = model
+              def full_name(self):
+                return f"{self.brand} - {self.model}"
+        car1 = Car("toyta","supera")    
+        car2 = Car("brezaaa","breza")    
+        fullname_car1 = car1.full_name()
+        fullname_car2 = car2.full_name()
+        print(fullname_car1,"\t",fullname_car2)
+      ```
+  - Inheritence 
+    - Create an electricCar class that inherits the Car class attributes and have additional attributes like bettery size.
+      ```python
+        class Car:
+              def __init__(self, brand, model):
+                self.brand = brand
+                  self.model = model
+              def full_name(self):
+                  return f"{self.brand} - {self.model}"
+          class ElectricCar(Car):
+              def __init__(self, brand, model, bettery_size):
+                super().__init__(brand, model)
+                  self.bettery_size = bettery_size
+        # electroCar = ElectricCar(brand="toyota",model="xyz",bettery_size="5000mah")    
+        electroCar = ElectricCar("toyota","xyz","5000mah")    
+        
+        print(electroCar.bettery_size,electroCar.brand,electroCar.model)
+        print(electroCar.full_name())
+      ```
