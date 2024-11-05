@@ -640,3 +640,57 @@
         print(electroCar.bettery_size,electroCar.brand,electroCar.model)
         print(electroCar.full_name())
       ```
+- **Day - 8**
+  - Review OOPs
+    ```python
+      # repeating oops concepts
+      # create a car class with two attributes : model,brand and then create instance;
+      print('start ')
+      class Car:
+          def __init__(self, brand, model):
+              self.brand = brand
+              self.model = model
+              self.greet();
+          def greet(self):
+              print("great work! the car ", self.model," is added.")
+              
+      cara = Car("brandA", "modelA")
+      carb = Car("brandB", "modelB")   
+      print('car a : \nBrand - ',cara.brand, ',\tModel - ',cara.model)
+
+
+
+      #  add a method to the class that show the full name of the car with brand and model
+      def fullname(self):
+              print(f"Your car's Brand - {cara.brand}, Model - {cara.model}")
+      # adding function to the class
+      Car.fullname = fullname;
+
+      cara.fullname();
+      # deleting function
+      del Car.fullname
+      print("deleted the fullname function from the Car class")
+
+      #  Inheritance
+      # Parent Child relationship between classes
+      class SubCar(Car):
+          def __init__(self, brand, model, seats):
+                super().__init__(brand, model)
+                self.seats = seats
+          
+      subcara = SubCar("brandsubcara", "modelsubcara", 2)
+      print(subcara.seats)
+
+      # encapsulation to make the brand attribute private so that brand will not be able to accessed by anyone directly. create a getter method for this as well.
+
+      # we can add doubble underscores at the begining of the attribute name
+      print('part-2')
+      class A:
+          def __init__(self,name,age):
+                self.name = name
+                self.__age = age
+          def get_age(self):
+              return self.__age   
+      a = A(name = 'namea', age = 22)
+      print(a.name,"\t age: ",a.get_age())
+    ``` 
