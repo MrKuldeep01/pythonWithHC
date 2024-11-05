@@ -693,4 +693,38 @@
               return self.__age   
       a = A(name = 'namea', age = 22)
       print(a.name,"\t age: ",a.get_age())
+
+      
+        #  Discuss about polymorphism by defining a method full_type with different behaviour in both classes
+        #  let me create these classes again 
+        class Car:
+          cars = 0
+          def __init__(self, brand, model):
+              self.brand = brand
+              self.model = model
+              Car.cars += 1
+              # Using self for Instance Variables:
+          """        When you assign self.brand = brand, you're creating an instance variable called brand that is unique to the instance. Each object (like car_A and car_B) can have different values for brand and model.
+          Accessing Class Variables:        When you increment the class variable cars using Car.cars += 1, you're modifying the variable that is shared among all instances. This ensures that regardless of how many instances you create, Car.cars will reflect the total count."""
+          def fule_type(self):
+              return "petrol or desol"
+      class ElectricCar(Car):
+          def __init__(self, brand, model, battery_size):
+              super().__init__(brand, model)
+              self.battery_size = battery_size
+          def fule_type(self):
+              # return "electricity"
+              return "electrical power"
+          
+      car_A = Car("brandA", "modelA")
+      car_B = ElectricCar("brandB", "modelB","xyz")
+    
+      # print("car a's fule type :",car_A.fule_type(),"\n car B's fule type :",car_B.fule_type())
+      # print(car_B.fule_type())
+    
+      
+      #  create an attriute to check the numbers of instance created by the specific class;
+      # check now!
+      car_c = Car("test",'test')
+      print(car_c.cars)
     ``` 
